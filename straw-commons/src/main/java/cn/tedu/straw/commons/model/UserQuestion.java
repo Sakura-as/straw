@@ -37,5 +37,4 @@ public class UserQuestion implements Serializable {
     @TableField("created_time")
     private LocalDateTime createdTime;
 
-
 }
