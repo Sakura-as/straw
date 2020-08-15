@@ -8,6 +8,7 @@ import cn.tedu.straw.api.ex.PhoneDuplicateException;
 import cn.tedu.straw.api.mapper.ClassInfoMapper;
 import cn.tedu.straw.api.mapper.UserMapper;
 import cn.tedu.straw.api.service.IUserService;
+import cn.tedu.straw.api.util.PasswordUtils;
 import cn.tedu.straw.commons.model.ClassInfo;
 import cn.tedu.straw.commons.model.User;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -76,8 +77,10 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
         user.setUsername(studentRegisterDTO.getPhone());
         // 补全user对象中的属性值：nickname > 参数studentRegisterDTO.getNickname()
         user.setNickname(studentRegisterDTO.getNickname());
-        // 补全user对象中的属性值：password > 参数，需要加密
-        user.setPassword(studentRegisterDTO.getPassword());
+        // TODO 补全user对象中的属性值：password > 参数，需要加密
+        String rawPassword = studentRegisterDTO.getPassword();
+        String encodePassword = PasswordUtils.encode(rawPassword);
+        user.setPassword(encodePassword);
         // 补全user对象中的属性值：gender > 参数studentRegisterDTO.getGender()
         user.setGender(studentRegisterDTO.getGender());
         // 补全user对象中的属性值：dayOfBirth > 参数studentRegisterDTO.getDayOfBirth()

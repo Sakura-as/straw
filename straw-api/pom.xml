@@ -14,7 +14,11 @@
     <name>straw-api</name>
 
     <dependencies>
-
+        <!-- 安全框架,用于密码加密,登录验证,访问授权等 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!--摘要算法工具包-->
         <dependency>
             <groupId>commons-codec</groupId>

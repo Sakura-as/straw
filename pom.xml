@@ -26,6 +26,18 @@
 
     <dependencyManagement>
         <dependencies>
+            <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-thymeleaf -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-thymeleaf</artifactId>
+                <version>2.3.2.RELEASE</version>
+            </dependency>
+            <!-- 安全框架,用于密码加密,登录验证,访问授权等 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
             <!--摘要算法工具包-->
             <dependency>
                 <groupId>commons-codec</groupId>

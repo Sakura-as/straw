@@ -29,11 +29,11 @@ public class R<T> {
     }
 
     /**
-     * 操作成功
+     * 操作成功s
      * @return 状态码已经标记为"成功"的对象
      */
     public static R ok(){
-        return new R().setState(1);
+        return new R().setState(State.SUCCESS);
     }
 
 
